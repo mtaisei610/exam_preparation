@@ -1,12 +1,22 @@
-# exam_preparation
+# 茨城高専試験対サイト
+
+茨城高専の定期試験の勉強用の資料を共有するリポジトリです。
+
+令和7年度作成。
+
+---
 
 ## URL
 
 [https://mtaisei610.github.io/exam_preparation/](https://mtaisei610.github.io/exam_preparation/)
 
+---
+
 ## 科目の追加
 
-このリポジトリをforkして、以下の手順で新しい科目を追加し、プルリクエストを送ってください。
+このリポジトリをforkして、以下の手順で新しい科目を追加しプルリクエストを送ってください。
+
+<br>
 
 ### 1. ディレクトリの作成
 
@@ -15,6 +25,8 @@
 ```bash
 mkdir hoge_subject
 ```
+
+<br>
 
 ### 2. ファイルの追加
 
@@ -33,7 +45,11 @@ cd hoge_subject
 cp /path/to/your/file.pdf .
 ```
 
+<br>
+
 ### 3. `index.html`の編集
+
+<br>
 
 #### リポジトリのルートのHTML
 
@@ -52,6 +68,8 @@ cp /path/to/your/file.pdf .
   <td class="date">2026-Jan-18(←作成日を記入)</td>
 </tr>
 ```
+
+<br>
 
 #### 各科目ディレクトリ内のHTML
 
