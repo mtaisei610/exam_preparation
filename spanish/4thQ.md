@@ -1,0 +1,314 @@
+あなたはスペイン語の先生です。
+第二外国語としてスペイン語を学んでいる私のために、期末試験範囲のわかりやすいテキストを作成してください。
+試験範囲は以下の通りです。
+全ての単語、動詞、重要な構文、例文を網羅して、私が効率的に学習できるように整理してください。
+動詞については、人称による変化をまとめ、特に不規則変化の動詞を重点的に押えてください。
+テキストは、見やすいデザインのhtml形式で作成してください。
+
+# 以下試験範囲
+
+## 必須単語
+
+- coche
+- fútbol
+- canciones
+- hamburguesa
+- chocolate
+- manta
+- autobús
+- papa frita
+- tren
+- correo
+- cerca de aquí
+- blanco
+- negro
+- rojo
+- amarillo
+- azul
+- carta
+- nombre
+- ajillo
+- pan con tomate
+- paella de pollo
+- japonesa
+- japonés
+- tenis
+- ruina
+- contento
+- cajero automático
+- allí
+- ahí
+- ocupado
+- España
+- zapatos
+- pescado
+- almuerzo
+- guitarra
+- tacos
+- inglés
+- edificio
+- celular
+- padre
+- madre
+- padres
+- mensaje
+- hermano
+- menor
+- mayor
+- baño
+- banco
+- foto
+- huevo
+- escuela
+- iglesia
+- comida
+- empanada
+- carne
+- jamon
+- bolsa
+- leche
+- amigo
+- foto
+- ventana
+- mexicano
+- celular
+- novio
+- pizzería
+- estación
+- viaje
+- músico
+- maestro
+- argentinos
+- Bolivia
+- música andina
+- Machu Picchu
+- pan
+- mano
+- bicicleta
+- motocicleta
+- móvil
+- ropa
+- computador
+- goma de borrar
+- lápiz
+- tiempo
+- hambre
+- sed
+- tiene
+- año
+- miedo
+- sueño
+- frio
+- calor
+- flan
+- menu
+- hoy
+- habitación
+- regalo
+- mama
+- papa
+- libre
+- casero
+- hambre
+- japón
+- rica
+- un
+- una
+- unas
+- por
+- en
+- el
+- la
+- de
+- litoro
+- con
+- y
+- hasta
+- muy
+- tarde
+- noche
+- para
+- gracias
+- temprano
+- conmigo
+- casero
+- más
+- todo
+- que
+- pelota
+- hombre
+- mujer
+- jugador
+- joven
+- viejo
+- lindo
+- famoso
+- cansado
+- triste
+- content
+- enfermo
+- sucio
+- alto
+- grande
+- guesta
+
+## Verbs
+
+人称による変化を押えておくこと。  
+特に、不規則変化の動詞は重点的に。
+
+- comrender
+- subir
+- amar
+- mandar
+- trabajar
+- vivir
+- abrir
+- ver
+- decir
+- conducir
+- oír
+- conocer
+- hacer
+- salir
+- poner
+- traer
+- dar
+- ir
+- tomar
+- comer
+- cantar
+- beber
+- usar
+- comprender
+- recibir
+- trabajar
+- vender
+- subir
+- saber
+- traer
+- dar
+- venir
+- tener
+- poder
+- querer
+- levantar
+- acostar
+- casar
+
+## 重要な構文
+
+肯定文、疑問文、応答を押えておく。
+試験範囲の単語と動詞を使て応用できるように。
+
+- Ser動詞 + 疑問詞(qué, dónde, cómo)
+- Estar動詞 + 疑問詞(qué, dónde, cómo)
+- Querer + 不定詞 + 目的語
+- Querer + ser (なりたい)
+- Tener (持っている)
+- Tener (ある)
+- Tener que + 不定詞 (～しなければならない)
+
+## 例文
+
+- ¿Qué es esto?
+- Este es un huevo.
+- Esta es una pelota.
+- ¿De dónde eres?
+- ¿De dónde es usted?
+- Soy de Japón.
+- ¿Cómo es la casa?
+- Es grande y linda.
+- ¿Dónde estás?
+- Estoy en la escuela.
+- ¿Dónde está mi mama?
+- Tu mama está en la iglesia.
+- ¿Dónde está Jorge?
+- Jorge está en el banco.
+- ¿Cómo estás?
+- ¿Cómo está?
+- ¿Cómo están?
+- Estamos muy bien.
+- ¿Cómo está esta comida?
+- ¡Está muy rica!
+- Voy a comer la pizza cuatro quesos.
+- Como la pizza cuatro quesos.
+- Él come una empanada de carne.
+- Jorge come una empanada de queso.
+- Padres comen unas empanadas de jamon.
+- Mis hermanas comen unas empanadas de jamon y queso.
+- Vendo las bolsas por internet.
+- Los estudiantes de kosen aprenden espaéol en la escuela.
+- Bebo un litro de leche.
+- ¿Comprendes ingrés?
+- Comemos la paella de mariscos en el restaurante español en el edificio de la
+- estación.
+- Mando el mansaje con foto a mi amigo.
+- Abro la ventana.
+- Canto en el Karaoke con amigos hasta muy tarde por la noche.
+- Aprendo español para conversar con mexicanos.
+- Quiero el celular nuevo.
+- Quiero la bolsa linda.
+- Quiero mucho dinero.
+- Quiero este/esta/esto.
+- Quiero novio/novia.
+- Quiero comer la pizza cuatro quesos en la pizzería en el edificio de la
+- estación.
+- Queremos charlar con amigos hasta muy tarde por la noche.
+- Quiero comprar la bolsa grande para viaje.
+- Quiero ser el músico.
+- Quiero ser la maestra de Pokémon.
+- Quiero aprender español para charlar con argentinos.
+- Quiero ir a Bolivia para disfrutar de la música andina.
+- Quiero viajar a Peru para mirar Machu Picchu.
+- ¿Quieres comer un poco más pan?
+- Si, por favor.
+- No, no gracias.
+- ¿Quereís aprender un poco más español?
+- Si, por favor.
+- No, no gracias.
+- ¡No, no queremos!
+- Quiero levantar la mano.
+- Quiero levantarme muy temprano.
+- ¿Quieres levantarte muy temprano?
+- Quiero levantar hermano menor.
+- Quiero casarme con ella.
+- Quiero casarme con novia.
+- ¿Quieres casarte conmigo?
+- Quiero acostarme.
+- Tengo la motocicleta.
+- Tengo el móvil nuevo.
+- Ella tiene muchas ropas.
+- Tengo dinero para comprar computador nuevo.
+- ¿Tienes una goma de borrar?
+- ¿Tienes un lápiz?
+- ¿Tienes algo para escribir?
+- ¿Tienes tiempo?
+- ¿Tiene hermanos?
+- Si, tengo dos hermanas.
+- Si, tengo dos hermanos mayores y una hermana menor.
+- ¿Tienes hambre?
+- No, pero tengo sed.
+- Si, tengo hambre.
+- ¿No tienes algo para comer?
+- Tengo dos empanadas.
+- ¡Quiero una!
+- ¿Cuantos años tienes?
+- Tengo veinte años.
+- Tengo miedo.
+- Tengo sueño.
+- Tengo frio.
+- Tengo calor.
+- ¿Tienen un flan casero?
+- Si, tenemos.
+- No, no tenemos.
+- ¿Tienen un menu del hoy?
+- Si, tenemos.
+- No, no tenemos.
+- ¿Tienen una habitación libre?
+- ¿Tienen una habitación con baño?
+- Tiene que comer todo.
+- Tenemos que aprender mas.
+- Tienes que ir a Italia para buscar tu mama.
+- Tengo que ser maestro de Pokémon.
+- Tengo que comprar un regalo a mi papa.

@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>試験範囲 例文完全チェック</title>
+    <style>
+      :root {
+        --primary: #d32f2f; /* Deep Red */
+        --secondary: #ffeb3b; /* Bright Yellow */
+        --bg-color: #f4f4f9;
+        --card-bg: #ffffff;
+        --text-main: #333;
+        --text-sub: #666;
+      }
+      body {
+        font-family:
+          "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 10px;
+        border-bottom: 3px solid var(--secondary);
+        padding-bottom: 5px;
+        display: inline-block;
+      }
+      p.instruction {
+        font-size: 0.9rem;
+        color: var(--text-sub);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .controls {
+        margin-bottom: 25px;
+      }
+      button.btn {
+        background-color: var(--text-main);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      button.btn:active {
+        transform: scale(0.95);
+      }
+
+      /* Card Grid */
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 15px;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      /* Individual Card */
+      .card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.2s ease;
+        border-left: 4px solid var(--primary);
+      }
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .question-box {
+        margin-bottom: 15px;
+      }
+      .jp-text {
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 1.5;
+      }
+
+      .answer-box {
+        background-color: #f0f0f0;
+        border-radius: 6px;
+        padding: 10px;
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .es-text {
+        color: var(--primary);
+        font-size: 1.1rem;
+        font-weight: bold;
+        opacity: 0; /* Hidden by default */
+        transition: opacity 0.3s;
+      }
+
+      .hint-text {
+        position: absolute;
+        font-size: 0.8rem;
+        color: #999;
+        pointer-events: none;
+      }
+
+      /* Revealed State */
+      .card.revealed .es-text {
+        opacity: 1;
+      }
+      .card.revealed .hint-text {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>試験範囲例文マスター</h1>
+    <p class="instruction">
+      カードをタップして、日本語からスペイン語を答えてください。
+    </p>
+
+    <div class="controls">
+      <button class="btn" onclick="shuffleCards()">🔀 シャッフルする</button>
+    </div>
+
+    <div id="cardGrid" class="card-container"></div>
+
+    <script>
+      // 試験範囲の例文リスト (日本語訳は文脈に合わせて付与)
+      const sentences = [
+        { jp: "これは何ですか？", es: "¿Qué es esto?" },
+        { jp: "これは卵です。", es: "Este es un huevo." },
+        { jp: "これはボールです。", es: "Esta es una pelota." },
+        { jp: "君はどこの出身？", es: "¿De dónde eres?" },
+        { jp: "あなたはどこの出身ですか？(丁寧)", es: "¿De dónde es usted?" },
+        { jp: "私は日本出身です。", es: "Soy de Japón." },
+        { jp: "その家はどんな感じですか？", es: "¿Cómo es la casa?" },
+        { jp: "大きくてきれいです。", es: "Es grande y linda." },
+        { jp: "君はどこにいるの？", es: "¿Dónde estás?" },
+        { jp: "私は学校にいます。", es: "Estoy en la escuela." },
+        { jp: "私のママはどこ？", es: "¿Dónde está mi mamá?" },
+        { jp: "君のママは教会にいます。", es: "Tu mamá está en la iglesia." },
+        { jp: "ホルヘはどこ？", es: "¿Dónde está Jorge?" },
+        { jp: "ホルヘは銀行にいます。", es: "Jorge está en el banco." },
+        { jp: "元気？(君の調子はどう？)", es: "¿Cómo estás?" },
+        { jp: "お元気ですか？(あなたの調子はどう？)", es: "¿Cómo está?" },
+        { jp: "元気ですか？(君たちの調子はどう？)", es: "¿Cómo están?" },
+        { jp: "私たちはとても元気です。", es: "Estamos muy bien." },
+        { jp: "この食事はどうですか？", es: "¿Cómo está esta comida?" },
+        { jp: "とても美味しいです！", es: "¡Está muy rica!" },
+        {
+          jp: "私はクアトロフォルマッジピザを食べるつもりです。",
+          es: "Voy a comer la pizza cuatro quesos.",
+        },
+        {
+          jp: "私はクアトロフォルマッジピザを食べます。",
+          es: "Como la pizza cuatro quesos.",
+        },
+        {
+          jp: "彼は肉のエンパナーダを食べます。",
+          es: "Él come una empanada de carne.",
+        },
+        {
+          jp: "ホルヘはチーズのエンパナーダを食べます。",
+          es: "Jorge come una empanada de queso.",
+        },
+        {
+          jp: "両親はハムのエンパナーダを食べます。",
+          es: "Padres comen unas empanadas de jamón.",
+        },
+        {
+          jp: "私の姉妹はハムとチーズのエンパナーダを食べます。",
+          es: "Mis hermanas comen unas empanadas de jamón y queso.",
+        },
+        {
+          jp: "私はインターネットでカバンを売ります。",
+          es: "Vendo las bolsas por internet.",
+        },
+        {
+          jp: "高専の学生は学校でスペイン語を学びます。",
+          es: "Los estudiantes de kosen aprenden español en la escuela.",
+        },
+        {
+          jp: "私は1リットルの牛乳を飲みます。",
+          es: "Bebo un litro de leche.",
+        },
+        { jp: "英語を理解しますか？", es: "¿Comprendes inglés?" },
+        {
+          jp: "私たちは駅ビルのスペイン料理店でシーフードパエリアを食べます。",
+          es: "Comemos la paella de mariscos en el restaurante español en el edificio de la estación.",
+        },
+        {
+          jp: "友達に写真付きメッセージを送ります。",
+          es: "Mando el mensaje con foto a mi amigo.",
+        },
+        { jp: "窓を開けます。", es: "Abro la ventana." },
+        {
+          jp: "夜遅くまで友達とカラオケで歌います。",
+          es: "Canto en el Karaoke con amigos hasta muy tarde por la noche.",
+        },
+        {
+          jp: "メキシコ人と会話するためにスペイン語を学びます。",
+          es: "Aprendo español para conversar con mexicanos.",
+        },
+        { jp: "新しい携帯電話が欲しい。", es: "Quiero el celular nuevo." },
+        { jp: "かわいいカバンが欲しい。", es: "Quiero la bolsa linda." },
+        { jp: "たくさんのお金が欲しい。", es: "Quiero mucho dinero." },
+        { jp: "これ/これ/これが欲しい。", es: "Quiero este/esta/esto." },
+        { jp: "彼氏/彼女が欲しい。", es: "Quiero novio/novia." },
+        {
+          jp: "駅ビルのピザ屋でクアトロフォルマッジピザを食べたい。",
+          es: "Quiero comer la pizza cuatro quesos en la pizzería en el edificio de la estación.",
+        },
+        {
+          jp: "夜遅くまで友達とおしゃべりしたい。",
+          es: "Queremos charlar con amigos hasta muy tarde por la noche.",
+        },
+        {
+          jp: "旅行用の大きなカバンを買いたい。",
+          es: "Quiero comprar la bolsa grande para viaje.",
+        },
+        { jp: "音楽家になりたい。", es: "Quiero ser el músico." },
+        {
+          jp: "ポケモンマスター(女)になりたい。",
+          es: "Quiero ser la maestra de Pokémon.",
+        },
+        {
+          jp: "アルゼンチン人と話すためにスペイン語を学びたい。",
+          es: "Quiero aprender español para charlar con argentinos.",
+        },
+        {
+          jp: "アンデス音楽を楽しむためにボリビアへ行きたい。",
+          es: "Quiero ir a Bolivia para disfrutar de la música andina.",
+        },
+        {
+          jp: "マチュピチュを見るためにペルーへ旅行したい。",
+          es: "Quiero viajar a Perú para mirar Machu Picchu.",
+        },
+        {
+          jp: "もう少しパンを食べたいですか？",
+          es: "¿Quieres comer un poco más de pan?",
+        },
+        { jp: "はい、お願いします。", es: "Sí, por favor." },
+        { jp: "いいえ、結構です。", es: "No, no gracias." },
+        {
+          jp: "君たちはもう少しスペイン語を学びたいですか？",
+          es: "¿Queréis aprender un poco más de español?",
+        },
+        { jp: "いいえ、私たちは欲しくないです！", es: "¡No, no queremos!" },
+        { jp: "手を挙げたい。", es: "Quiero levantar la mano." },
+        {
+          jp: "私はとても早く起きたい。",
+          es: "Quiero levantarme muy temprano.",
+        },
+        {
+          jp: "君はとても早く起きたいですか？",
+          es: "¿Quieres levantarte muy temprano?",
+        },
+        { jp: "弟を起こしたい。", es: "Quiero levantar hermano menor." },
+        { jp: "彼女と結婚したい。", es: "Quiero casarme con ella." },
+        { jp: "恋人と結婚したい。", es: "Quiero casarme con novia." },
+        { jp: "私と結婚したいですか？", es: "¿Quieres casarte conmigo?" },
+        { jp: "私は寝たい。", es: "Quiero acostarme." },
+        { jp: "オートバイを持っています。", es: "Tengo la motocicleta." },
+        { jp: "新しい携帯を持っています。", es: "Tengo el móvil nuevo." },
+        {
+          jp: "彼女はたくさんの服を持っています。",
+          es: "Ella tiene muchas ropas.",
+        },
+        {
+          jp: "新しいコンピュータを買うためのお金を持っています。",
+          es: "Tengo dinero para comprar computador nuevo.",
+        },
+        { jp: "消しゴム持ってる？", es: "¿Tienes una goma de borrar?" },
+        { jp: "鉛筆持ってる？", es: "¿Tienes un lápiz?" },
+        { jp: "何か書くもの持ってる？", es: "¿Tienes algo para escribir?" },
+        { jp: "時間ある？", es: "¿Tienes tiempo?" },
+        { jp: "兄弟はいますか？", es: "¿Tiene hermanos?" },
+        { jp: "はい、姉妹が二人います。", es: "Sí, tengo dos hermanas." },
+        {
+          jp: "はい、兄が二人と妹が一人います。",
+          es: "Sí, tengo dos hermanos mayores y una hermana menor.",
+        },
+        { jp: "お腹空いてる？", es: "¿Tienes hambre?" },
+        { jp: "いいえ、でも喉が渇いています。", es: "No, pero tengo sed." },
+        { jp: "はい、お腹が空いています。", es: "Sí, tengo hambre." },
+        { jp: "何か食べるものない？", es: "¿No tienes algo para comer?" },
+        { jp: "エンパナーダを2つ持っています。", es: "Tengo dos empanadas." },
+        { jp: "1つ欲しい！", es: "¡Quiero una!" },
+        { jp: "何歳ですか？", es: "¿Cuántos años tienes?" },
+        { jp: "20歳です。", es: "Tengo veinte años." },
+        { jp: "怖いです。", es: "Tengo miedo." },
+        { jp: "眠いです。", es: "Tengo sueño." },
+        { jp: "寒いです。", es: "Tengo frío." },
+        { jp: "暑いです。", es: "Tengo calor." },
+        { jp: "手作りのプリンはありますか？", es: "¿Tienen un flan casero?" },
+        { jp: "はい、あります。", es: "Sí, tenemos." },
+        { jp: "いいえ、ありません。", es: "No, no tenemos." },
+        { jp: "今日のメニューはありますか？", es: "¿Tienen un menú del hoy?" },
+        {
+          jp: "空いている部屋はありますか？",
+          es: "¿Tienen una habitación libre?",
+        },
+        {
+          jp: "お風呂付きの部屋はありますか？",
+          es: "¿Tienen una habitación con baño?",
+        },
+        { jp: "全部食べなければなりません。", es: "Tiene que comer todo." },
+        {
+          jp: "私たちはもっと学ばなければなりません。",
+          es: "Tenemos que aprender más.",
+        },
+        {
+          jp: "君はママを探しにイタリアへ行かなければならない。",
+          es: "Tienes que ir a Italia para buscar a tu mamá.",
+        },
+        {
+          jp: "ポケモンマスターにならなければならない。",
+          es: "Tengo que ser maestro de Pokémon.",
+        },
+        {
+          jp: "パパにプレゼントを買わなければならない。",
+          es: "Tengo que comprar un regalo a mi papá.",
+        },
+      ];
+
+      const grid = document.getElementById("cardGrid");
+
+      function createCard(item) {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.onclick = function () {
+          this.classList.toggle("revealed");
+        };
+
+        const qBox = document.createElement("div");
+        qBox.className = "question-box";
+
+        const jp = document.createElement("div");
+        jp.className = "jp-text";
+        jp.textContent = item.jp;
+
+        qBox.appendChild(jp);
+
+        const aBox = document.createElement("div");
+        aBox.className = "answer-box";
+
+        const hint = document.createElement("span");
+        hint.className = "hint-text";
+        hint.textContent = "タップして答えを表示";
+
+        const es = document.createElement("div");
+        es.className = "es-text";
+        es.textContent = item.es;
+
+        aBox.appendChild(hint);
+        aBox.appendChild(es);
+
+        card.appendChild(qBox);
+        card.appendChild(aBox);
+
+        return card;
+      }
+
+      function renderCards(data) {
+        grid.innerHTML = "";
+        data.forEach((item) => {
+          grid.appendChild(createCard(item));
+        });
+      }
+
+      function shuffleCards() {
+        // Fisher-Yates shuffle
+        const shuffled = [...sentences];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        renderCards(shuffled);
+      }
+
+      // Initial render (no shuffle initially to keep the order of the list)
+      renderCards(sentences);
+    </script>
+  </body>
+</html>

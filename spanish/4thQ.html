@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>スペイン語 期末試験対策テキスト</title>
+    <style>
+      :root {
+        --primary-color: #c1272d; /* Spain Red */
+        --secondary-color: #f1c40f; /* Spain Yellow-ish */
+        --text-color: #333;
+        --bg-color: #f9f9f9;
+        --card-bg: #ffffff;
+      }
+      body {
+        font-family:
+          "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+          Meiryo, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: var(--primary-color);
+        border-bottom: 3px solid var(--secondary-color);
+        padding-bottom: 10px;
+      }
+      h2 {
+        color: var(--primary-color);
+        background-color: #fff0f0;
+        padding: 10px;
+        border-left: 5px solid var(--primary-color);
+        margin-top: 40px;
+      }
+      h3 {
+        color: #555;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+        margin-top: 25px;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .card {
+        background: var(--card-bg);
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      /* Vocabulary Grid */
+      .vocab-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+      }
+      .vocab-item {
+        background: #f4f4f4;
+        padding: 8px;
+        border-radius: 4px;
+        font-size: 0.95em;
+      }
+      .vocab-item span {
+        display: block;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+      /* Verb Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #eee;
+      }
+      .irregular {
+        color: red;
+        font-weight: bold;
+      }
+      .note {
+        font-size: 0.85em;
+        color: #666;
+        margin-top: 5px;
+      }
+      /* Grammar Box */
+      .grammar-box {
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #fffcf5;
+      }
+      .formula {
+        font-weight: bold;
+        color: #2c3e50;
+        background: #e8e8e8;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      /* Sentences */
+      .sentence-list li {
+        margin-bottom: 8px;
+      }
+      .translation {
+        display: block;
+        font-size: 0.85em;
+        color: #777;
+      }
+      /* Responsive */
+      @media (max-width: 600px) {
+        .vocab-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        table {
+          font-size: 0.8em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🇪🇸 スペイン語 期末試験対策 🇪🇸</h1>
+      <p style="text-align: center">
+        試験範囲の単語・動詞・構文・例文の完全まとめ
+      </p>
+
+      <h2>1. 必須単語 (Vocabulario)</h2>
+      <p>名詞には性別（el/la）をつけて覚えるのが合格への近道です。</p>
+
+      <div class="card">
+        <h3>🍎 食べ物・飲み物 (Comida y Bebida)</h3>
+        <div class="vocab-grid">
+          <div class="vocab-item"><span>la hamburguesa</span>ハンバーガー</div>
+          <div class="vocab-item"><span>el chocolate</span>チョコレート</div>
+          <div class="vocab-item"><span>la papa frita</span>フライドポテト</div>
+          <div class="vocab-item"><span>el ajillo</span>アヒージョ</div>
+          <div class="vocab-item">
+            <span>pan con tomate</span>パン・コン・トマテ
+          </div>
+          <div class="vocab-item">
+            <span>la paella de pollo</span>鶏肉のパエリア
+          </div>
+          <div class="vocab-item"><span>el pescado</span>魚</div>
+          <div class="vocab-item"><span>el almuerzo</span>昼食</div>
+          <div class="vocab-item"><span>los tacos</span>タコス</div>
+          <div class="vocab-item"><span>el huevo</span>卵</div>
+          <div class="vocab-item"><span>la comida</span>食事/食べ物</div>
+          <div class="vocab-item"><span>la empanada</span>エンパナーダ</div>
+          <div class="vocab-item"><span>la carne</span>肉</div>
+          <div class="vocab-item"><span>el jamón</span>ハム</div>
+          <div class="vocab-item"><span>la leche</span>牛乳</div>
+          <div class="vocab-item"><span>el pan</span>パン</div>
+          <div class="vocab-item"><span>el flan</span>プリン</div>
+          <div class="vocab-item"><span>el menú</span>メニュー</div>
+          <div class="vocab-item"><span>el litro</span>リットル</div>
+          <div class="vocab-item"><span>rico/rica</span>美味しい</div>
+        </div>
+
+        <h3>🏠 場所・建物 (Lugares)</h3>
+        <div class="card vocab-grid">
+          <div class="vocab-item"><span>la escuela</span>学校</div>
+          <div class="vocab-item"><span>la iglesia</span>教会</div>
+          <div class="vocab-item"><span>el banco</span>銀行</div>
+          <div class="vocab-item"><span>el edificio</span>建物</div>
+          <div class="vocab-item"><span>el baño</span>トイレ/浴室</div>
+          <div class="vocab-item"><span>la pizzería</span>ピザ屋</div>
+          <div class="vocab-item"><span>la estación</span>駅</div>
+          <div class="vocab-item"><span>la habitación</span>部屋</div>
+          <div class="vocab-item"><span>cerca de aquí</span>ここの近く</div>
+          <div class="vocab-item"><span>allí / ahí</span>あそこ / そこ</div>
+          <div class="vocab-item"><span>España</span>スペイン</div>
+          <div class="vocab-item"><span>Bolivia</span>ボリビア</div>
+          <div class="vocab-item"><span>Japón</span>日本</div>
+          <div class="vocab-item"><span>Machu Picchu</span>マチュピチュ</div>
+        </div>
+
+        <h3>👨‍👩‍👧‍👦 人・職業 (Personas)</h3>
+        <div class="vocab-grid">
+          <div class="vocab-item"><span>el padre / papá</span>父</div>
+          <div class="vocab-item"><span>la madre / mamá</span>母</div>
+          <div class="vocab-item"><span>los padres</span>両親</div>
+          <div class="vocab-item"><span>el hermano</span>兄弟</div>
+          <div class="vocab-item"><span>el amigo</span>友達</div>
+          <div class="vocab-item"><span>el novio / la novia</span>恋人</div>
+          <div class="vocab-item"><span>el músico</span>音楽家</div>
+          <div class="vocab-item"><span>el maestro</span>先生</div>
+          <div class="vocab-item"><span>el hombre</span>男性</div>
+          <div class="vocab-item"><span>la mujer</span>女性</div>
+          <div class="vocab-item"><span>el jugador</span>選手</div>
+          <div class="vocab-item"><span>japonés / japonesa</span>日本人</div>
+          <div class="vocab-item"><span>mexicano</span>メキシコ人</div>
+          <div class="vocab-item"><span>argentinos</span>アルゼンチン人</div>
+        </div>
+
+        <h3>🚗 乗り物・物 (Cosas y Transporte)</h3>
+        <div class="vocab-grid">
+          <div class="vocab-item"><span>el coche</span>車</div>
+          <div class="vocab-item"><span>el autobús</span>バス</div>
+          <div class="vocab-item"><span>el tren</span>電車</div>
+          <div class="vocab-item"><span>la bicicleta</span>自転車</div>
+          <div class="vocab-item"><span>la motocicleta</span>オートバイ</div>
+          <div class="vocab-item"><span>el fútbol</span>サッカー</div>
+          <div class="vocab-item"><span>el tenis</span>テニス</div>
+          <div class="vocab-item"><span>la guitarra</span>ギター</div>
+          <div class="vocab-item">
+            <span>la música andina</span>アンデス音楽
+          </div>
+          <div class="vocab-item"><span>las canciones</span>歌</div>
+          <div class="vocab-item">
+            <span>la carta / el correo</span>手紙 / 郵便
+          </div>
+          <div class="vocab-item"><span>el mensaje</span>メッセージ</div>
+          <div class="vocab-item"><span>la foto</span>写真</div>
+          <div class="vocab-item"><span>el celular / móvil</span>携帯電話</div>
+          <div class="vocab-item"><span>el computador</span>PC</div>
+          <div class="vocab-item"><span>la goma de borrar</span>消しゴム</div>
+          <div class="vocab-item"><span>el lápiz</span>鉛筆</div>
+          <div class="vocab-item"><span>la pelota</span>ボール</div>
+          <div class="vocab-item"><span>la manta</span>毛布</div>
+          <div class="vocab-item"><span>los zapatos</span>靴</div>
+          <div class="vocab-item"><span>la bolsa</span>袋/カバン</div>
+          <div class="vocab-item"><span>la ropa</span>服</div>
+          <div class="vocab-item"><span>la ventana</span>窓</div>
+          <div class="vocab-item"><span>el regalo</span>プレゼント</div>
+          <div class="vocab-item"><span>el nombre</span>名前</div>
+          <div class="vocab-item"><span>el viaje</span>旅行</div>
+          <div class="vocab-item"><span>el inglés</span>英語</div>
+          <div class="vocab-item"><span>la ruina</span>遺跡</div>
+          <div class="vocab-item"><span>el cajero automático</span>ATM</div>
+        </div>
+
+        <h3>🎨 形容詞 (Adjetivos)</h3>
+        <div class="vocab-grid">
+          <div class="vocab-item"><span>blanco</span>白</div>
+          <div class="vocab-item"><span>negro</span>黒</div>
+          <div class="vocab-item"><span>rojo</span>赤</div>
+          <div class="vocab-item"><span>amarillo</span>黄色</div>
+          <div class="vocab-item"><span>azul</span>青</div>
+          <div class="vocab-item"><span>grande</span>大きい</div>
+          <div class="vocab-item"><span>alto</span>高い</div>
+          <div class="vocab-item"><span>joven</span>若い</div>
+          <div class="vocab-item"><span>viejo</span>年とった/古い</div>
+          <div class="vocab-item"><span>lindo</span>かわいい/きれい</div>
+          <div class="vocab-item"><span>famoso</span>有名な</div>
+          <div class="vocab-item"><span>contento</span>満足/嬉しい</div>
+          <div class="vocab-item"><span>triste</span>悲しい</div>
+          <div class="vocab-item"><span>cansado</span>疲れた</div>
+          <div class="vocab-item"><span>enfermo</span>病気の</div>
+          <div class="vocab-item"><span>sucio</span>汚い</div>
+          <div class="vocab-item"><span>ocupado</span>忙しい</div>
+          <div class="vocab-item"><span>libre</span>自由な/空いている</div>
+          <div class="vocab-item"><span>casero</span>手作りの</div>
+          <div class="vocab-item"><span>menor</span>年下の</div>
+          <div class="vocab-item"><span>mayor</span>年上の</div>
+        </div>
+
+        <h3>⏳ 時間・その他 (Tiempo y Otros)</h3>
+        <div class="vocab-grid">
+          <div class="vocab-item"><span>hoy</span>今日</div>
+          <div class="vocab-item"><span>tarde</span>遅く/午後</div>
+          <div class="vocab-item"><span>temprano</span>早く</div>
+          <div class="vocab-item"><span>noche</span>夜</div>
+          <div class="vocab-item"><span>tiempo</span>時間/天気</div>
+          <div class="vocab-item"><span>año</span>年</div>
+          <div class="vocab-item"><span>muy</span>とても</div>
+          <div class="vocab-item"><span>más</span>もっと</div>
+          <div class="vocab-item"><span>todo</span>全て</div>
+          <div class="vocab-item"><span>gracias</span>ありがとう</div>
+          <div class="vocab-item"><span>conmigo</span>私と一緒に</div>
+          <div class="vocab-item"><span>por / para</span>～のために/へ</div>
+          <div class="vocab-item"><span>con / de / en</span>～と/の/で</div>
+          <div class="vocab-item"><span>hasta</span>～まで</div>
+          <div class="vocab-item"><span>que</span>(接続詞・関係詞)</div>
+        </div>
+      </div>
+
+      <h2>2. 動詞の活用 (Verbos)</h2>
+      <p>
+        赤字は<strong>不規則変化</strong>です。特に「1人称単数(Yo)」の変化に注意してください。
+      </p>
+
+      <div class="card">
+        <h3>★超重要・完全不規則 (Irregular Total)</h3>
+        <table>
+          <tr>
+            <th>動詞</th>
+            <th>意味</th>
+            <th>Yo (私)</th>
+            <th>Tú (君)</th>
+            <th>Él/Ella (彼/彼女)</th>
+            <th>Nosotros (私達)</th>
+            <th>Ellos (彼ら)</th>
+          </tr>
+          <tr>
+            <td><strong>Ser</strong></td>
+            <td>～です(性質)</td>
+            <td class="irregular">soy</td>
+            <td class="irregular">eres</td>
+            <td class="irregular">es</td>
+            <td class="irregular">somos</td>
+            <td class="irregular">son</td>
+          </tr>
+          <tr>
+            <td><strong>Estar</strong></td>
+            <td>～です(状態・場所)</td>
+            <td class="irregular">estoy</td>
+            <td class="irregular">estás</td>
+            <td class="irregular">está</td>
+            <td>estamos</td>
+            <td class="irregular">están</td>
+          </tr>
+          <tr>
+            <td><strong>Ir</strong></td>
+            <td>行く</td>
+            <td class="irregular">voy</td>
+            <td class="irregular">vas</td>
+            <td class="irregular">va</td>
+            <td class="irregular">vamos</td>
+            <td class="irregular">van</td>
+          </tr>
+        </table>
+
+        <h3>★語幹変化動詞 (Stem Changing)</h3>
+        <p class="note">※Nosotrosの時は変化しません。</p>
+        <table>
+          <tr>
+            <th>動詞</th>
+            <th>変化型</th>
+            <th>Yo (私)</th>
+            <th>Tú</th>
+            <th>Él/Ella</th>
+            <th>Nosotros</th>
+            <th>Ellos</th>
+          </tr>
+          <tr>
+            <td><strong>Tener</strong></td>
+            <td>持つ (go + e>ie)</td>
+            <td class="irregular">tengo</td>
+            <td class="irregular">tienes</td>
+            <td class="irregular">tiene</td>
+            <td>tenemos</td>
+            <td class="irregular">tienen</td>
+          </tr>
+          <tr>
+            <td><strong>Venir</strong></td>
+            <td>来る (go + e>ie)</td>
+            <td class="irregular">vengo</td>
+            <td class="irregular">vienes</td>
+            <td class="irregular">viene</td>
+            <td>venimos</td>
+            <td class="irregular">vienen</td>
+          </tr>
+          <tr>
+            <td><strong>Querer</strong></td>
+            <td>欲しい (e > ie)</td>
+            <td class="irregular">quiero</td>
+            <td class="irregular">quieres</td>
+            <td class="irregular">quiere</td>
+            <td>queremos</td>
+            <td class="irregular">quieren</td>
+          </tr>
+          <tr>
+            <td><strong>Poder</strong></td>
+            <td>できる (o > ue)</td>
+            <td class="irregular">puedo</td>
+            <td class="irregular">puedes</td>
+            <td class="irregular">puede</td>
+            <td>podemos</td>
+            <td class="irregular">pueden</td>
+          </tr>
+          <tr>
+            <td><strong>Jugar</strong></td>
+            <td>遊ぶ (u > ue)</td>
+            <td class="irregular">juego</td>
+            <td class="irregular">juegas</td>
+            <td class="irregular">juega</td>
+            <td>jugamos</td>
+            <td class="irregular">juegan</td>
+          </tr>
+        </table>
+
+        <h3>★「私(Yo)」だけ不規則 (Go / Zco Verbs)</h3>
+        <table>
+          <tr>
+            <th>動詞</th>
+            <th>意味</th>
+            <th>Yo (私)</th>
+            <th>Tú</th>
+            <th>Él/Ella</th>
+          </tr>
+          <tr>
+            <td><strong>Hacer</strong></td>
+            <td>する/作る</td>
+            <td class="irregular">hago</td>
+            <td>haces</td>
+            <td>hace</td>
+          </tr>
+          <tr>
+            <td><strong>Poner</strong></td>
+            <td>置く</td>
+            <td class="irregular">pongo</td>
+            <td>pones</td>
+            <td>pone</td>
+          </tr>
+          <tr>
+            <td><strong>Salir</strong></td>
+            <td>出る</td>
+            <td class="irregular">salgo</td>
+            <td>sales</td>
+            <td>sale</td>
+          </tr>
+          <tr>
+            <td><strong>Traer</strong></td>
+            <td>持ってくる</td>
+            <td class="irregular">traigo</td>
+            <td>traes</td>
+            <td>trae</td>
+          </tr>
+          <tr>
+            <td><strong>Decir</strong></td>
+            <td>言う (go+i)</td>
+            <td class="irregular">digo</td>
+            <td class="irregular">dices</td>
+            <td class="irregular">dice</td>
+          </tr>
+          <tr>
+            <td><strong>Oír</strong></td>
+            <td>聞く</td>
+            <td class="irregular">oigo</td>
+            <td class="irregular">oyes</td>
+            <td class="irregular">oye</td>
+          </tr>
+          <tr>
+            <td><strong>Conocer</strong></td>
+            <td>知っている(人・場所)</td>
+            <td class="irregular">conozco</td>
+            <td>conoces</td>
+            <td>conoce</td>
+          </tr>
+          <tr>
+            <td><strong>Conducir</strong></td>
+            <td>運転する</td>
+            <td class="irregular">conduzco</td>
+            <td>conduces</td>
+            <td>conduce</td>
+          </tr>
+          <tr>
+            <td><strong>Saber</strong></td>
+            <td>知っている(知識)</td>
+            <td class="irregular">sé</td>
+            <td>sabes</td>
+            <td>sabe</td>
+          </tr>
+          <tr>
+            <td><strong>Dar</strong></td>
+            <td>与える</td>
+            <td class="irregular">doy</td>
+            <td>das</td>
+            <td>da</td>
+          </tr>
+          <tr>
+            <td><strong>Ver</strong></td>
+            <td>見る</td>
+            <td class="irregular">veo</td>
+            <td>ves</td>
+            <td>ve</td>
+          </tr>
+        </table>
+
+        <h3>★規則動詞 (Regular Verbs)</h3>
+        <p class="note">
+          以下の動詞は規則的に変化します。<br />
+          (-ar: o, as, a, amos, an) / (-er: o, es, e, emos, en) / (-ir: o, es,
+          e, imos, en)
+        </p>
+        <div class="vocab-grid">
+          <div class="vocab-item">Comprender (理解する)</div>
+          <div class="vocab-item">Subir (登る/乗る)</div>
+          <div class="vocab-item">Amar (愛する)</div>
+          <div class="vocab-item">Mandar (送る)</div>
+          <div class="vocab-item">Trabajar (働く)</div>
+          <div class="vocab-item">Vivir (住む)</div>
+          <div class="vocab-item">Abrir (開ける)</div>
+          <div class="vocab-item">Tomar (取る/飲む)</div>
+          <div class="vocab-item">Comer (食べる)</div>
+          <div class="vocab-item">Cantar (歌う)</div>
+          <div class="vocab-item">Beber (飲む)</div>
+          <div class="vocab-item">Usar (使う)</div>
+          <div class="vocab-item">Recibir (受け取る)</div>
+          <div class="vocab-item">Vender (売る)</div>
+        </div>
+
+        <h3>★再帰動詞 (Reflexive Verbs)</h3>
+        <p class="note">
+          主語に合わせて再帰代名詞(me, te, se, nos, se)が必要です。
+        </p>
+        <ul>
+          <li>
+            <strong>Levantarse</strong> (起きる): Me levanto, Te levantas...
+          </li>
+          <li>
+            <strong>Acostarse</strong> (寝る): Me acuesto, Te acuestas... (o>ue)
+          </li>
+          <li><strong>Casarse</strong> (結婚する): Me caso, Te casas...</li>
+        </ul>
+      </div>
+
+      <h2>3. 重要構文 (Gramática Clave)</h2>
+
+      <div class="card">
+        <h3>1. Ser vs Estar (2つのbe動詞)</h3>
+        <div class="grammar-box">
+          <p>
+            <span class="formula">Ser + 性質・国籍・職業</span><br />
+            変わらない本質的なこと。<br />
+            例: Soy de Japón. (私は日本出身です)
+          </p>
+          <hr />
+          <p>
+            <span class="formula">Estar + 場所・状態</span><br />
+            一時的な状態や、所在。<br />
+            例: Estoy en la escuela. (私は学校にいます)<br />
+            例: La comida está rica. (この食事は美味しい＝今の感想)
+          </p>
+        </div>
+
+        <h3>2. Querer (～したい / 欲しい)</h3>
+        <div class="grammar-box">
+          <p>
+            <span class="formula">Querer + 名詞</span> = ～が欲しい<br />
+            例: Quiero el celular nuevo. (新しいスマホが欲しい)
+          </p>
+          <p>
+            <span class="formula">Querer + 不定詞(動詞の原形)</span> =
+            ～したい<br />
+            例: Quiero comer pizza. (ピザが食べたい)
+          </p>
+          <p>
+            <span class="formula">Querer + ser + 職業</span> = ～になりたい<br />
+            例: Quiero ser músico. (音楽家になりたい)
+          </p>
+        </div>
+
+        <h3>3. Tener (持つ / ある / 熟語)</h3>
+        <div class="grammar-box">
+          <p>
+            <span class="formula">Tener + 名詞</span> = 持っている<br />
+            例: Tengo dinero. (お金を持っている)
+          </p>
+          <p>
+            <span class="formula">Tener que + 不定詞</span> =
+            ～しなければならない<br />
+            例: Tengo que estudiar. (勉強しなければならない)
+          </p>
+          <p>
+            <strong>重要な熟語:</strong><br />
+            - Tener hambre (お腹が空いている)<br />
+            - Tener sed (喉が渇いている)<br />
+            - Tener sueño (眠い)<br />
+            - Tener miedo (怖い)<br />
+            - Tener calor / frío (暑い / 寒い)<br />
+            - Tener ... años (～歳です)
+          </p>
+        </div>
+      </div>
+
+      <h2>4. 重要例文リスト (Frases)</h2>
+      <p>試験に出る例文です。文法を意識して音読しましょう。</p>
+
+      <div class="card">
+        <h3>自己紹介・状態 (Ser / Estar)</h3>
+        <ul class="sentence-list">
+          <li>
+            ¿Qué es esto? - Este es un huevo. / Esta es una pelota. <br /><span
+              class="translation"
+              >これは何ですか？ - これは卵です / これはボールです。</span
+            >
+          </li>
+          <li>
+            ¿De dónde eres? - Soy de Japón. <br /><span class="translation"
+              >君はどこの出身？ - 日本出身です。</span
+            >
+          </li>
+          <li>
+            ¿Cómo es la casa? - Es grande y linda. <br /><span
+              class="translation"
+              >その家はどんな感じ？ - 大きくて綺麗です。(性質)</span
+            >
+          </li>
+          <li>
+            ¿Dónde estás? - Estoy en la escuela. <br /><span class="translation"
+              >君はどこにいるの？ - 学校にいます。</span
+            >
+          </li>
+          <li>
+            ¿Dónde está mi mamá? - Tu mamá está en la iglesia. <br /><span
+              class="translation"
+              >私の母はどこ？ - 君の母は教会にいます。</span
+            >
+          </li>
+          <li>
+            ¿Cómo está esta comida? - ¡Está muy rica! <br /><span
+              class="translation"
+              >この食事はどう？ - とても美味しい！（状態）</span
+            >
+          </li>
+        </ul>
+
+        <h3>日常生活 (Actions)</h3>
+        <ul class="sentence-list">
+          <li>
+            Vendo las bolsas por internet. <br /><span class="translation"
+              >私はインターネットでカバンを売ります。</span
+            >
+          </li>
+          <li>
+            Los estudiantes de kosen aprenden español en la escuela. <br /><span
+              class="translation"
+              >高専の学生は学校でスペイン語を学びます。</span
+            >
+          </li>
+          <li>
+            Mando el mensaje con foto a mi amigo. <br /><span
+              class="translation"
+              >友達に写真付きメッセージを送ります。</span
+            >
+          </li>
+          <li>
+            Abro la ventana. <br /><span class="translation"
+              >窓を開けます。</span
+            >
+          </li>
+          <li>
+            Canto en el Karaoke con amigos hasta muy tarde por la noche.
+            <br /><span class="translation"
+              >夜遅くまで友達とカラオケで歌います。</span
+            >
+          </li>
+        </ul>
+
+        <h3>願望・夢 (Querer)</h3>
+        <ul class="sentence-list">
+          <li>
+            Quiero el celular nuevo. / Quiero la bolsa linda. <br /><span
+              class="translation"
+              >新しい携帯が欲しい。/ 可愛いカバンが欲しい。</span
+            >
+          </li>
+          <li>
+            Quiero comer la pizza cuatro quesos en la pizzería en el edificio de
+            la estación. <br /><span class="translation"
+              >駅ビルのピザ屋でクアトロフォルマッジを食べたい。</span
+            >
+          </li>
+          <li>
+            Quiero ser la maestra de Pokémon. <br /><span class="translation"
+              >ポケモンマスターになりたい。</span
+            >
+          </li>
+          <li>
+            Quiero ir a Bolivia para disfrutar de la música andina. <br /><span
+              class="translation"
+              >アンデス音楽を楽しむためにボリビアへ行きたい。</span
+            >
+          </li>
+          <li>
+            Quiero viajar a Perú para mirar Machu Picchu. <br /><span
+              class="translation"
+              >マチュピチュを見るためにペルーへ旅行したい。</span
+            >
+          </li>
+          <li>
+            ¿Quieres casarte conmigo? <br /><span class="translation"
+              >私と結婚してくれますか？（結婚したいですか？）</span
+            >
+          </li>
+        </ul>
+
+        <h3>所有・感覚・義務 (Tener)</h3>
+        <ul class="sentence-list">
+          <li>
+            ¿Tienes una goma de borrar? / ¿Tienes un lápiz? <br /><span
+              class="translation"
+              >消しゴム持ってる？ / 鉛筆持ってる？</span
+            >
+          </li>
+          <li>
+            ¿Tienes hambre? - No, pero tengo sed. <br /><span
+              class="translation"
+              >お腹空いてる？ - いいえ、でも喉が渇いています。</span
+            >
+          </li>
+          <li>
+            ¿Cuántos años tienes? - Tengo veinte años. <br /><span
+              class="translation"
+              >何歳ですか？ - 20歳です。</span
+            >
+          </li>
+          <li>
+            Tengo sueño. / Tengo frío. <br /><span class="translation"
+              >眠いです。/ 寒いです。</span
+            >
+          </li>
+          <li>
+            Tengo que ser maestro de Pokémon. <br /><span class="translation"
+              >ポケモンマスターにならなければならない。</span
+            >
+          </li>
+          <li>
+            Tienes que ir a Italia para buscar a tu mamá. <br /><span
+              class="translation"
+              >君はお母さんを探すためにイタリアに行かなければならない。</span
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
