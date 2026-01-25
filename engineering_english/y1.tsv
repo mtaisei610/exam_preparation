@@ -8,7 +8,7 @@
 二値分類器	binary classifier
 分類器	Classifiers
 分類器	classifier
-交差検証	cross−validation
+交差検証	cross-validation
 誤分類	Error
 MNISTデータセット	MNIST dataset
 混同行列	Confusion matrix
@@ -38,11 +38,11 @@ F値	F score
 バイアス項	bias term
 ロジスティック回帰	Logistic regression
 対数オッズ	log odds
-学習曲線	learning curve 
+学習曲線	learning curve
 ミニバッチ	mini-batch
 多項式回帰	polynomial regression
 決定境界	Decision Boundaries
-訓練誤差	training error 
+訓練誤差	training error
 階乗	factorial
 陽性クラス	positive class
 形状変換	reshape
@@ -64,11 +64,11 @@ F値	F score
 計算量	computational complexity
 リプシッツ連続	Lipschitz continuous
 エポック	 epoch
-確率的勾配降下法	 stochastic gradient descent:SGD
+確率的勾配降下法	 stochastic gradient descent
 (擬似)焼きなまし法	 simulated annealing
 勾配降下法	gradient descent
 エポック	 epoch
-正則化なし	 penalty=None
+正則化なし	 penalty None
 サポートベクターマシン	support vector machines
 SVM分類器	SVM Classifiers
 マージン違反	Margin violations
@@ -82,7 +82,7 @@ SVM分類器	SVM Classifiers
 非線形データセット	nonlinear datasets
 ε不感	ε-insensitive 
 SVM分類器	SVM classifiers 
-マーサーの定理	Mercer’s theorem
+マーサーの定理	Mercer's theorem
 類似性関数	Similarity function
 カーネルトリック	kernel trick
 特徴量	features
@@ -97,7 +97,7 @@ CARTアルゴリズム	CART Algorithm
 主成分分析	Principal Component Analysis
 ブラックボックスモデル	black box model
 ランダムフォレスト	Random Forest
-recursively	再帰的に
+再帰的に	recursively
 決定木	Decision Trees
 P値	p-value
 ホワイトボックスモデル	white box models
