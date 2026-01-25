@@ -1,0 +1,109 @@
+他クラス分類	Multiclass classification
+精度	accuracy
+調和平均	harmonic mean
+偏ったデータセット	skewed dataset
+混同行列	confusion matrix
+テストセット	test set
+層別サンプリング	stratified sampling
+二値分類器	binary classifier
+分類器	Classifiers
+分類器	classifier
+交差検証	cross−validation
+誤分類	Error
+MNISTデータセット	MNIST dataset
+混同行列	Confusion matrix
+閉じた輪	Closed loops
+ピクセルの明度	pixel's intensity
+データ拡張	Data augmentation
+多ラベル分類	Multilabel classification
+多出力分類	Multioutput classification
+適合率	precision
+偽陽性率	false positive rate
+決定関数	decision function
+多出力システム	Multioutput System
+適合率	Precision
+適合率	precision
+再現率	recall
+偽陽性	false positive
+ランダムフォレスト分類器	random forest classifier
+F値	F score
+ラッソ回帰	Lasso Regression
+疎なモデル	sparse model
+正規方程式	normal equation
+ガウスノイズ	Gaussian noise
+劣勾配ベクトル	Subgradient vector
+エラスティック回帰	Elastic Net Regression
+早期打ち切り	Early stopping
+閉形式の方程式	closed-form equation
+バイアス項	bias term
+ロジスティック回帰	Logistic regression
+対数オッズ	log odds
+学習曲線	learning curve 
+ミニバッチ	mini-batch
+多項式回帰	polynomial regression
+決定境界	Decision Boundaries
+訓練誤差	training error 
+階乗	factorial
+陽性クラス	positive class
+形状変換	reshape
+ソフトマックス回帰	Softmax regression
+交差エントロピー	Cross entropy
+リッジ回帰	ridge regression
+損失関数	cost function
+サポートベクターマシン	support vector machine
+単位行列	identity matrix
+早期打ち切り	Early stopping
+凸関数	convex function
+ロジスティック回帰	Logistic Regression
+パラメータ空間	parameter space
+学習曲線	learning curves 
+バイアス	bias
+予測	predictions
+偏微分	 partial derivative
+学習率	learning rate
+計算量	computational complexity
+リプシッツ連続	Lipschitz continuous
+エポック	 epoch
+確率的勾配降下法	 stochastic gradient descent:SGD
+(擬似)焼きなまし法	 simulated annealing
+勾配降下法	gradient descent
+エポック	 epoch
+正則化なし	 penalty=None
+サポートベクターマシン	support vector machines
+SVM分類器	SVM Classifiers
+マージン違反	Margin violations
+多項式特徴量	polynomial features
+ヒンジ損失	Hinge loss
+双対問題	Dual problem
+カーネルトリック	kernel trick
+ハードマージン分類	hard margin classification
+ソフトマージン分類	soft margin classification
+カーネルSVM	Kernelized SVMs
+非線形データセット	nonlinear datasets
+ε不感	ε-insensitive 
+SVM分類器	SVM classifiers 
+マーサーの定理	Mercer’s theorem
+類似性関数	Similarity function
+カーネルトリック	kernel trick
+特徴量	features
+カーネルトリック	Kernel trick
+線形分割可能	linearly separable
+文字列カーネル	string kernel
+SVM回帰	SVM regression
+線形SVM分類器	linear SVM classifiers
+決定木	Decision Tree
+エントロピー	entropy
+CARTアルゴリズム	CART Algorithm
+主成分分析	Principal Component Analysis
+ブラックボックスモデル	black box model
+ランダムフォレスト	Random Forest
+recursively	再帰的に
+決定木	Decision Trees
+P値	p-value
+ホワイトボックスモデル	white box models
+パラメトリックモデル	parametric model 
+二進対数	binary logarithm
+ルートノード	root node
+解釈可能な機械学習	interpretable ML
+貪欲なアルゴリズム	greedy algorithm
+ジニ不純度	Gini impurity

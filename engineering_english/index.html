@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style type="text/css">
+      body,
+      html {
+        background: #fff;
+        font-family:
+          "Bitstream Vera Sans", "Lucida Grande", "Lucida Sans Unicode",
+          Lucidux, Verdana, Lucida, sans-serif;
+      }
+      tr:nth-child(even) {
+        background: #f4f4f4;
+      }
+      th,
+      td {
+        padding: 0.1em 0.5em;
+      }
+      th {
+        text-align: left;
+        font-weight: bold;
+        background: #eee;
+        border-bottom: 1px solid #aaa;
+      }
+      #list {
+        border: 1px solid #aaa;
+        width: 100%;
+      }
+      a {
+        color: #a33;
+      }
+      a:hover {
+        color: #e33;
+      }
+    </style>
+
+    <!-- ================================================== -->
+    <!-- <title>タグの内容を編集してください -->
+    <!-- ================================================== -->
+    <title>
+      Index of /exam_preparation/情報工学英語演習
+    </title>
+  </head>
+  <body>
+    <!-- ================================================== -->
+    <!-- <h1>タグの内容を編集してください -->
+    <!-- ================================================== -->
+    <h1>Index of /exam_preparation/情報工学英語演習
+    <table id="list">
+      <thead>
+        <tr>
+          <th style="width: 55%">
+            <a href="?C=N&amp;O=A">File Name</a>&nbsp;<a href="?C=N&amp;O=D"
+              >&nbsp;&darr;&nbsp;</a
+            >
+          </th>
+          <th style="width: 20%">
+            <a href="?C=S&amp;O=A">Class</a>&nbsp;<a href="?C=S&amp;O=D"
+              >&nbsp;&darr;&nbsp;</a
+            >
+          </th>
+          <th style="width: 25%">
+            <a href="?C=M&amp;O=A">Date</a>&nbsp;<a href="?C=M&amp;O=D"
+              >&nbsp;&darr;&nbsp;</a
+            >
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="link"><a href="../">Parent directory/</a></td>
+          <td class="size">-</td>
+          <td class="date">-</td>
+        </tr>
+
+        <!-- ================================================== -->
+        <!-- ここに<tr>タグを挿入してください(複数可) -->
+        <!-- ================================================== -->
+        <tr>
+          <td class="link">
+            <a href="./y1.tsv" download title="試験範囲の単語"
+              >試験範囲の単語</a
+            >
+          </td>
+          <td class="size">4I情報工学英語演習</td>
+          <td class="date">2026-Jan-25</td>
+        </tr>
+        <tr>
+          <td class="link">
+            <a href="./y2.tsv" download title="試験範囲の文"
+              >試験範囲の文</a
+            >
+          </td>
+          <td class="size">4I情報工学英語演習</td>
+          <td class="date">2026-Jan-25</td>
+        </tr>
+        <tr>
+          <td class="link">
+            <a href="./quiz.lisp" download title="プログラムコード"
+              >プログラムコード</a
+            >
+          </td>
+          <td class="size">4I情報工学英語演習</td>
+          <td class="date">2026-Jan-25</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+      <div>
+        <h3>TL;DR</h3>
+        <p>lisp製の情報工学英語演習の練習ツールです。</p>
+        <p>日本語が表示され、対応する英語をタイプすると正誤判定されます。</p>
+        <p>正解するまで同じ問題が出題されます。</p>
+        <p>1ラウンドで試験範囲をカバーできます。</p>
+        <br><br>
+        <h3>How to use</h3>
+        <p>1. Download all files.</p>
+        <p>2. Install SBCL.</p>
+        <p>3. Run <code>quiz.lisp</code> script.</p>
+        <p><code>
+
+# 単語練習
+$ sbcl --script quiz.lisp y1.lisp
+
+# 文練習
+$ sbcl --script quiz.lisp y2.lisp
+        </code></p>
+      </div>
+  </body>
+</html>

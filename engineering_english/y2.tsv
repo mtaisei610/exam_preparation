@@ -1,0 +1,91 @@
+データを詳しく調べる前に、テストセットを作って封印しなければならない......。	You should always create a test set and set it aside before inspecting the data closely.
+F値は適合率と再現率の調和平均である。	The F_1 score is the harmonic mean of precision and recall
+2項分類器は2つのクラスの間の区別をするだけだったが多クラス分類器は2つ以上のクラスを見分けることをできる	Whereas binary classifiers distinguish between two classes, multiclass classifiers can distinguish between more than two classes.
+適合率と再現率はトレードオフの関係にある。	This is called the precision/recall trade-off.
+分類器は、学習時にclasses_属性に値の順序でターゲットクラスのリストを格納する。	When a classifier is trained, it stores the list of target classes in its classes_ attribute, ordered by value.
+一部の学習アルゴリズムは学習インスタンスの順序の影響を受け、同じようなインスタンスが立て続けに登場すると性能が劣化する。	Some learning algorithms are sensitive to the order of the training instances, and they perform poorly if they get many similar instances in a row.
+多クラスデータセットに対してSDGClassifireを学習し、予測をするのも同じくらいに簡単だ	Training an SDGClassifire on a multiclass dataset and using it to make prediction is just as easy
+カラーコーディングした混同行列を使えば、分析が大幅に楽になる。	A colored diagram of the confusion matrix is much easier to analyze.
+この章では、MNISTデータセットを使う。MNISTは、高校生や米国国勢調査局の職員が手書きした70,000個の数字画像のデータセットである。	In this chapter we will be using the MNIST dataset, which is a set of 70,000 small images of digits handwritten by high school students and employees of the US Census Bureau.
+例えば、閉じた輪の数を数えるアルゴリズムを書くのである	For example, writing an algorithm to count the number of closed loops.
+70,000個の画像があり、個々の画像には784個の特徴量がある。	There are 70,000 images, and each image has 784 features.
+元の学習データを少し並行移動したり、回転したりした画像を作って学習セットを補う方がはるかに簡単だ。	A much simpler approach consists of augmenting the training set with slightly shifted and rotated variants of the training images. 
+このように複数の2値タグを出力する分類システムを多ラベル分類システムと呼ぶ。	Such a classification system that output multiple binary tags is called multilabel classification system
+SGDClsassfierは、個々のインスタンスに対して、決定関数に基づいてスコアを計算し、そのスコアがしきい値より高ければインスタンスは陽性のクラスに、そうでなければ陰性のクラスに分類される。	For each instance, it computes a score based on a decision function. If, that score is greater than a threshold, it a ssigns the instance to the positive class; otherwise it assigns it to the negative class
+単純に個々のラベルが多クラスでも良い（複数の値を持って良い）という形に多ラベル分類を一般化したものだ。	It is a generalization of multilabel classification where each label can be multiclass(i.e., it can have more than two possible values)
+しきい値を上げると再現率が下がることが確認できる。	This confirms that raising the threshold decreases recall.
+分類と回帰の境界が曖昧になる場合がある．	The line between classification and regression is sometimes blurry.
+混同行列の基本的な考え方は、すべてのA/Bの組み合わせについて、クラスAのインスタンスがクラスBに分類された回数を数えるというものである。	The general idea of a confusion matrix is to count the number of times instances of class A are classified as class B, for all A/B pairs.
+実は、適合率はしきい値を上げたときに下がることがときどきあるのだ。	The reason is that precision may sometimes go down when you raise the threshold.
+再現率が80%を超えたあたりから適合率が急速に落ちていくことがわかる。	You can see that precision really starts to fall sharply at around 80% recall.
+混合行列を分析すると、分類器の改善方法のアイデアが生まれることも多い．	Analyzing the confusion matrix often gives you insights into ways to improve your classifier
+混同行列の各行は実際のクラス、各列は予想したクラスを表す。	Each row in a confusion matrix represents an actual class, while each column represents a predicted class. 
+再現率が上がれば上がるほど、偽陽性を上がるのである。	Once again there is a trade-off: the higher the recall, the more false positives the classifier produces.
+これでMatplotlibを使えば、FPRに対するTPRをプロットできる。	Then you can plot the FPR against the TPR using Matplotlib.
+precision_recall_curve()関数は引数として個々のインスタンスのラベルとスコアを取るので、ランダムフォレスト分類器を学習し、それを使って各インスタンスにスコアを与えなければならない。	the precision_recall_curve() function expects labels and scores for each instance, so we need to train the random forest classifier and make it assign a score to ecch instance.
+ランダムフォレストはF値やROCAUCスコアでも大幅に優れている。	It's F score and ROCAUC score are also significantly better.
+これらの係数は、最適なα値が学習セットサイズに左右されないようにするために選ばれている。	These factors were chosen to ensure that the ooptimal a value is independent from the training set size.
+0以外の重みを持つ特徴量がほとんどないモデル	model with few nonzero feature weights.
+このように、全体の最適値にパラメータが近づいてくると、、勾配は緩やかになる。	As you can see, the gradients get smaller as the parameters approach the global optimum, so gradient descent naturally slows down.
+モデルの学習とは、モデルが学習セットに最もよく適合するようなモデルパラメータを見つけることだ	training a model means setting its parameters so that the model best fits the training set.
+エラスティックネット回帰はリッジ回帰とラッソ回帰の中間である	elastic net regression is a middle ground between ridge regression and lasso regression.
+@演算子は行列の乗算を行う。	The @ operator performs matrix multiplication.
+これは、モデルが学習データを過学習し始めたことを示す	this indicates that the model has started to overfit the training data.
+これでロジスティック回帰は、2値分類器になる。	This makes it a binary classifier.
+ロジスティック回帰が確率を推定して予測をすることはわかった	now you konow how a logistic regression model estimates probabilities and makes predictions.
+学習セット全体に対する損失関数は、単純にすべての学習インスタンスのコストの平均である	the cost function over the whole training set is the average cost over all training instances.
+モデルを学習セットにベストフィットさせる為のモデルパラメータ（つまり、学習セットに対して損失関数が最小になるようなモデルパラメータ）を直接計算する「閉形式の方程式」を使う方法。	Using a "closed-form" equation that directly computes the model parameters that best fit the model to the training set (i.e., the model parameters that minimize the cost function over the training set).
+驚くべきことに、線形モデルは非線形データに適合させられる。	Surprisingly, you can use a linear model to fit nonlinear data.
+sklearn.base.clone()では、モデルのハイパーパラメータしかコピーされない	sklearn.base.clone() only copies the model's hyperparameters.
+より一般的に、線形モデルとは、式4-1に示すように、入力特徴量の加重総和に、バイアス項（bias term、切片項：intercept termとも呼ばれる。）という定数を加えたものである。	More generally, a linear model makes a prediction by simply computing a weighted sum of the input features, plus a constant called the bias term (also called the intercept term), as shown in Equation 4-1.
+わずかながら重なり合う部分があることに注意しよう	Notice that there is a bit of overlap.
+X_polyは、Xのもともとの特徴量にその2乗の新しい特徴量を追加したものになっている。	X_poly now contains the original feature of X plus the square of this fracture.
+ごくわずかな学習セットで学習されたモデルでは、十分に汎化できないため、最初のうちは検証誤差はかなり大きい。	When the model is trained on very few training instances, it is incapable of generalizing properly, which is why the validation error is initially quite large.
+特に七里大規模なミニバッチを使えば誤差が小さくなる。	especially with fairly large mini-batches.
+これをソフトマックス回帰あるいは、多項ロジスティック回帰と呼ぶ	this is calledsoftmax regression, or multinominal logistic regression.
+学習の目的は、ターゲットクラスを高い確率で推定するモデルを作ることだ	the objective is to have a model that estimates a high probability for the target class.
+一般に、インスタンスがそのクラスに属するかどうかによって1または0になる	In general, it is either equal to 1 or 0, depending on whether the instance belongs to the class or not.
+（適合の評価方法としては、学習曲線というものもある。）学習曲線とは、学習イテレーションの関数としてモデルの訓練誤差と検証誤差をプロットしたものである。	(Another way to tell is to look at the learning curves,)which are plots of the model’s training error and validation error as a function of the training iteration.
+RidgeCVクラスもリッジ回帰を行うが、さらに公差検証を使ったハイパラメータの自動調整を行う。	The RidgeCV class also performs ridge regression, but it automatically tunes hyperparmeters using cross-validation.
+私達は、機械学習の最初のブラックボックスをこじ開けたのだ。	we've opened up the first machine learning black boxes!
+線形回帰と同様に、リッジ回帰ら閉形式の方程式の計算でも勾配降下法による学習でも実行できる。	As with linear regression, we can perform ridge regression either by computing a closed-form equation or by performing gradient descent.
+モデルが学習データに過小適合している場合、学習データを追加しても改善しない。	If your model is underfitting the training data, adding more training examples will not help.
+ノイズのおかげでもとの関数の正確なパラメータは復元できなくなっている。	the noise made it impossible to recover the exact parameters of the original function.
+バイアスの高いモデルは、学習データに対して過小適合しやすい。	A high-bias model is most likely to underfit the training data.
+このような逆行列計算の計算量は、一般にO(n^2.4)からO(n^3)である。	The computational complexity of inverting such a matrix is typically about O(n^2.4) to O(n^3).
+学習率を大きくすればするほど、アルゴリズムは発散してよい解を見つけられなくなる。	This might make the algorithm diverge, with larger and larger values, failing to find a good solution.
+勾配降下法を実装するためには、個々のモデルパラメータΘ_jについて損失関数の勾配を計算する必要がある。	To implement gradient descent, you need to compute the gradient of the cost function with regard to each model parameter Θ_j.
+勾配ベクトルを得たとき、全体として上を向いているなら、逆の方向に向かえば下に向かう。	Once you have the gradient vector, which points uphill, just go in the opposite direction to go downhill.
+バッチ勾配降下法の最大の問題は、勾配を計算するために各ステップで学習セットを全部使うことにより、学習セットが大きいときには計算速度が極端に遅くなることだ。	The main problem with batch gradient descent is the fact that it uses the whole training set to compute the gradients at every step, which makes it very slow when the training set is large.
+つまり、ランダム性は局所的な最小値から逃れるためにはよいが、最小値に落ち着かない可能性があるという点ではよくない。	Therefore, randomness is good to escape from local optima, but bad because it means that the algorithm can never settle at the minimum.
+勾配降下法(gradient descent)は、非常に広い範囲の問題の最適解を見つけられる汎用性が高い最適化アルゴリズムだ。	Gradient descent is a generic optimization algorithm capable of finding optimal solutions to a wide range of problems.
+バッチ勾配降下法のコードが学習セット全体を対象とする計算を1,000回繰り返したのに対し、このコードは学習セットを50回処理するだけでかなり良い解にたどり着く。	While the batch gradient descent code iterated 1,000 times through the whole training set, this code goes through the training set only 50 times and reaches a pretty good solution:
+scikit-learnを使っていてSGDで線形回帰を行いたい場合には、デフォルトでMSE損失関数を最適化するSGDRegressorクラスを使えばよい。	To perform linear regression using stochastic GD with Scikit-Learn, you can use the SGDRegressor class, which defaults to optimizing the MSE cost function.
+バイアス項bはマージンの大きさに影響を与えないことに注意しよう。	Note that the bias term b has no influence on the size of the margin
+QPソルバーを使うのは、SVMを学習するための方法の1つである。	Using a QP solver is one way to train an SVM.
+条件付き最適化問題は、緻密な関連を持つ別の問題でも表現できる	Given a constrained optimization problem, know as the primal problem it is possible to express a different but closely related problem
+SVMは規模が中以下(インスタンス数が数百から数千のもの)の非線形データセットで力を発揮し、特に分類の仕事に向いている。	SVMs shine with small to medium-sized nonlinear datasets (i.e., hundreds to thousands of instances), especially for classification tasks.
+学習インスタンスの数が特徴量の数よりも少ない場合は、双対問題を解く方が主問題を解くよりも早い。	The dual problem is faster to solve than the primal one when the number of training instances is smaller than the number of features.
+ハードマージン分類には、データが線形分割できるときでなければ使えず、外れ値に敏感になりすぎるという2つの大きな問題点がある。	There are two main issues with hard margin classification. First, it only works if the data is linearly separable. Second, it is sensitive to outliers.
+関数K(a,b)=(a^t b)^2は、2次元多項式カーネルと呼ばれている。	The function K(a,b) = (a b)2 is a second-degree polynomial kernel.
+SVM分類器は新規性検知にも使える。	SVMs can also be used for novelty detection.
+同じトリックを使ってバイアス項のbも計算しなければならない	you need to use the  same trick to compute the bias term b
+SVMモデルが過学習している場合には、Cを小さくして正則化するとよい。	If your SVM model is overfitting, you can try regularizing it by reducing C.
+εを小さくするとサポートベクターの数が増え、モデルを正則化する。	Reducing ε increases the number of support vectors, which regularizes the model.
+多項式特徴量の追加は簡単に実装でき、あらゆる種類の機械学習アルゴリズム (SVMに限らず)ですばらしく機能するが、次数が低いと非常に複雑なデータセットを処理できず、次数が高いと特徴量が膨大な数になってモデルが遅くなりすぎる。	Adding polynomial features is simple to implement and can work great with all sorts of machine learning algorithms (not just SVMs). That said, at a low polynomial degree this method cannot deal with very complex datasets, and with a high polynomial degree it creates a huge number of features, making the model too slow.
+一部のカーネルは、特定のデータ構造に特化している。	Some kernel are specialized for specific data structures.
+実際に類似性特徴量を追加しなくても、多数の類似性特徴量を追加したのと同じ結果が得られるのである。	making it possible to obtain a similar result as if you had added many similarity features, but without actually doing so.
+非線形問題には、個々のインスタンスが特定のランドマーク（landmark）にどの程度近いかを測定する類似性関数 （simlarity function）の計算結果を特徴遼として追加するという方法でも対処できる(二章で地理的類似性特徴量を追加したときと同じように）。	Another technique to tackle nonlinear problems is to add features computed using a similarity function, which measures how much each instance resembles a particular landmark, as we did in Chapter 2 when we added the geographic similarity features.
+学習セットが非常に大きい場合、同じように特徴量数も多くなってしまう。	If your training set is very large, you end up with an equally large number of features.
+学習には、逐次的学習に対応し、ほとんどメモリを消費しないSGDを使うため、RAMに入り切らない大規模なデータセットでモデルを学習するときにも使える。	For training it uses stochastic gradient descent,which allows incremental learning and uses little memory, so you can use it to train a model on a large dataset that does not fit in RAM.
+決定木は、回帰のタスクもこなせる。	decision trees are also capable of performing regression tasks
+決定木は、回帰でも分類のときと同じように過学習しがちだ。	just like for classification tasks, decision trees are prone to overfitting when dealing with regression tasks.
+決定木は理解、解釈しやすく、使いやすく、柔軟で、強力である。	they are relatively easy to understand and interpret ,simple to use, versatile, and powerful.
+より一般的に言うと、決定木の最大の問題は、ばらつきが大きいことだ。	More generally, the main issue with decision trees is that they have quite a high variance.
+CARTアルゴリズムは、学習セットの2分割に成功したらサブセットを同じ論理で分割し、その次はサブサブセットの分割というように再帰的に分割する。	Once the CART algorithm has successfully split the training set in two, it splits the subsets using the same logic, then the sub-subsets, and so on, recursively.
+エントロピーの概念は熱力学で分子の乱雑さの指標として使ったのが最初である。	The concept of entropy originated in thermodynamics as a measure of molecular disorder
+この確率が指定されたしきい値より高ければ、ノードは不要だと考えられ、その子は削除される。	If this probability is higher than a given threshold then the node is considered unnecessary and its children are deleted.
+決定木は強力で、複雑なデータセットに適合できる。	They(decision trees) are powerful algorithms, capable of fitting complex datasets.
+ルートノードからスタートする。	You start at the root node.
+正則化ハイパーパラメータは使うアルゴリズムによって異なるが、一般に少なくとも決定木の深さの上限は制限できる。	The regularization hyperparameters depend on the algorithm used, but generally you can at least restrict the maximum depth of the decision tree.
+ノードの条件に当てはまるすべての学習インスタンスが同じクラスに属するなら、そのノードは「純粋」 (gini=0)である。	a node is "pure" (gini=0) if all training instances it applies to belong to the same class.
